@@ -1,67 +1,297 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CAP Garland, LLC</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-      color: #333;
-    }
-    header {
-      background-color: #003366;
-      color: white;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h1, h2 {
-      color: #003366;
-    }
-    .contact {
-      background: #fff;
-      padding: 20px;
-      border-left: 5px solid #003366;
-      margin-top: 30px;
-    }
-    footer {
-      background-color: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ORGANIC MARKET EUROPE LLC — Organic Grocery • Newark</title>
+<meta name="description" content="ORGANIC MARKET EUROPE LLC • Organic produce, pantry staples, and wellness goods in Newark, CA. Curbside pickup and local delivery." />
+<meta name="robots" content="index,follow" />
+<meta property="og:title" content="ORGANIC MARKET EUROPE LLC — Organic Grocery & Wellness" />
+<meta property="og:description" content="Fresh organic produce, pantry staples, and wellness goods in Newark, CA. Pickup & local delivery." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://visitnewportbeach.com/wp-content/uploads/2018/04/whole700-700x400.jpg" />
+<meta property="og:locale" content="en_US" />
+<link rel="icon" href="https://avatars.mds.yandex.net/i?id=033bb638f73a00f796741a42e238ecc9350f9a17-5420719-images-thumbs&n=13">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#16a34a;   /* green */
+    --accent:#06b6d4;    /* aqua */
+    --ink:#0b1220;       /* deep header */
+    --text:#334155;      /* slate-600 */
+    --muted:#64748b;     /* slate-500 */
+    --bg:#f1f5f9;        /* slate-100 */
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+  a{color:var(--primary);text-decoration:none}
+  a:hover{opacity:.9}
+
+  /* Header */
+  header{
+    background:linear-gradient(120deg,#0b1220,#0f2f1a,#0b1220);background-size:300% 300%;animation:gradientShift 18s ease infinite;
+    color:#fff;padding:24px 16px;border-bottom:6px solid var(--accent);
+  }
+  .wrap{max-width:1120px;margin:auto;padding:0 14px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{width:48px;height:48px;border-radius:10px;border:2px solid var(--accent);object-fit:cover}
+  .brand h1{margin:0;font-size:1.7rem;letter-spacing:.2px}
+  .tagline{margin:2px 0 0;color:#bbf7d0}
+
+  nav{background:#0f2f1a}
+  nav .navwrap{max-width:1120px;margin:auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;padding:12px}
+  nav a{color:#fff;font-weight:800;padding:8px 10px;border-radius:8px}
+  nav a:hover{background:rgba(255,255,255,.08)}
+
+  /* Hero */
+  .hero{max-width:1120px;margin:26px auto;display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:center;padding:0 14px}
+  .hero img{width:100%;border-radius:16px;border:4px solid #e2e8f0;object-fit:cover}
+  .panel{background:var(--white);border-left:6px solid var(--primary);border-radius:14px;padding:18px}
+  .panel h2{margin:0 0 8px;color:#0f172a}
+  .tag{display:inline-block;background:#dcfce7;border:1px solid #bbf7d0;color:#065f46;border-radius:999px;padding:6px 12px;margin:6px 6px 0 0;font-size:.9rem}
+
+  /* Sections */
+  .section{max-width:1120px;margin:22px auto;background:var(--white);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
+  .section h2{margin:0 0 12px;color:#111}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+
+  .card{background:#f8fafc;border:1px solid #e5e7eb;border-left:6px solid var(--primary);border-radius:10px;padding:12px;transition:.3s}
+  .card:hover{transform:translateY(-3px);box-shadow:0 6px 12px rgba(0,0,0,.08)}
+
+  .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .feature{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:14px}
+  .feature h3{margin:0 0 6px}
+  .muted{color:var(--muted)}
+
+  .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .prod{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden}
+  .prod img{width:100%;height:180px;object-fit:cover}
+  .prod .meta{padding:12px}
+  .prod .price{font-weight:800;color:#0b1220}
+
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:14px}
+  .gallery img{width:100%;border-radius:10px;border:2px solid #e2e8f0;object-fit:cover;aspect-ratio:4/3;transition:.35s;background:#fff}
+  .gallery img:hover{transform:scale(1.04);box-shadow:0 12px 28px rgba(0,0,0,.18)}
+
+  .cta{margin-top:12px;display:flex;gap:12px;flex-wrap:wrap}
+  .btn{background:var(--primary);color:#fff;padding:12px 16px;border-radius:10px;font-weight:800;display:inline-flex;align-items:center;gap:8px;transition:transform .2s ease, box-shadow .2s ease}
+  .btn.secondary{background:#fff;color:#0f172a;border:2px solid #0f172a}
+  .btn.accent{background:var(--accent);color:#0b1220}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+
+  .map{max-width:1120px;margin:16px auto;border-radius:12px;overflow:hidden;border:3px solid var(--primary)}
+  .map iframe{width:100%;height:360px;border:0;display:block}
+
+  footer{background:#0b1220;color:#fff;text-align:center;padding:18px;margin-top:26px;border-top:6px solid var(--accent)}
+
+  .bar{position:fixed;left:0;right:0;bottom:0;background:#ffffffd9;backdrop-filter:blur(6px);display:flex;gap:10px;justify-content:center;padding:10px;border-top:2px solid var(--primary);z-index:999}
+  .bar a{background:#0b1220;color:#fff;padding:10px 14px;border-radius:999px;font-weight:800}
+  .bar a:nth-child(2){background:var(--accent);color:#0b1220}
+  @media(min-width:820px){.bar{display:none}}
+  @media(max-width:980px){.hero{grid-template-columns:1fr}}
+
+  /* Animations */
+  @keyframes gradientShift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+  .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"GroceryStore",
+  "name":"ORGANIC MARKET EUROPE LLC",
+  "url":"https://example.com/",
+  "logo":"https://avatars.mds.yandex.net/i?id=033bb638f73a00f796741a42e238ecc9350f9a17-5420719-images-thumbs&n=13",
+  "image":"https://visitnewportbeach.com/wp-content/uploads/2018/04/whole700-700x400.jpg",
+  "telephone":"+1-507-757-5339",
+  "email":"support@haventy.shop",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"JACARANDA DR NEWARK 94560 CA",
+    "addressCountry":"US"
+  }
+}
+</script>
 </head>
 <body>
-  <header>
-    <h1>CAP Garland, LLC</h1>
-    <p>Private Investment Fund</p>
-  </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>CAP Garland, LLC is a Washington-based private investment fund focused on delivering value through diversified investment strategies.</p>
+<header role="banner">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="ORGANIC MARKET EUROPE LLC home">
+      <img src="https://avatars.mds.yandex.net/i?id=033bb638f73a00f796741a42e238ecc9350f9a17-5420719-images-thumbs&n=13" alt="Organic Market logo">
+      <div>
+        <h1>ORGANIC MARKET EUROPE LLC</h1>
+        <p class="tagline">Organic Grocery • Newark, CA</p>
+      </div>
+    </a>
+  </div>
+</header>
 
-    <h2>Contact</h2>
-    <div class="contact">
-      <p><strong>Address:</strong> 915 W 2nd Ave, Spokane, WA 99201</p>
-      <p><strong>Email:</strong> <a href="mailto:ryanberg@capgarland.shop">ryanberg@capgarland.shop</a></p>
-      <p><strong>Phone:</strong> (509) 822-3850</p>
+<nav aria-label="Main" role="navigation">
+  <div class="navwrap">
+    <a href="#about">About</a>
+    <a href="#products">Products</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero reveal" id="top">
+  <img src="https://visitnewportbeach.com/wp-content/uploads/2018/04/whole700-700x400.jpg" alt="Fresh organic produce displays">
+  <div class="panel" aria-label="Intro">
+    <h2>Fresh. Organic. Local.</h2>
+    <p>Shop seasonal produce, clean-ingredient pantry goods, and wellness essentials—available for pickup or delivery.</p>
+    <div>
+      <span class="tag">🥬 Organic Produce</span>
+      <span class="tag">🥖 Pantry Staples</span>
+      <span class="tag">🧴 Wellness</span>
+      <span class="tag">🚚 Delivery & Pickup</span>
     </div>
-  </section>
+    <div class="cta">
+      <a class="btn accent" href="tel:+15077575339" aria-label="Call Organic Market Europe at 1-507-757-5339">📞 Call: +1 (507) 757‑5339</a>
+      <a class="btn secondary" href="mailto:support@haventy.shop" aria-label="Email Organic Market Europe at support@haventy.shop">✉️ Email: support@haventy.shop</a>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    &copy; 2025 CAP Garland, LLC. All rights reserved.
-  </footer>
+<!-- ABOUT -->
+<section id="about" class="section reveal" aria-labelledby="about-h">
+  <h2 id="about-h">About Us</h2>
+  <p><strong>ORGANIC MARKET EUROPE LLC</strong> curates better-for-you foods and eco-friendly goods. We prioritize local sourcing and transparent labels.</p>
+  <p><strong>Address:</strong> JACARANDA DR, Newark, CA 94560 •
+     <strong>Email:</strong> <a href="mailto:support@haventy.shop">support@haventy.shop</a> •
+     <strong>Phone:</strong> <a href="tel:+15077575339">+1 (507) 757‑5339</a></p>
+</section>
+
+<!-- PRODUCTS (sample cards) -->
+<section id="products" class="section reveal" aria-labelledby="prod-h">
+  <h2 id="prod-h">Popular Products</h2>
+  <div class="products">
+    <article class="prod">
+      <img src="https://i.pinimg.com/originals/10/60/40/1060405415c635ff72e4d7e2c1f56563.jpg" alt="Organic vegetables basket">
+      <div class="meta">
+        <h3>Seasonal Veg Box</h3>
+        <p class="muted">Locally sourced greens & roots</p>
+        <p class="price">$24.90</p>
+      </div>
+    </article>
+    <article class="prod">
+      <img src="https://acol.co.il/media/images_blog/big/a785dfe03bdc4f2013db65a706119ef5.jpg" alt="Organic pantry staples on shelf">
+      <div class="meta">
+        <h3>Organic Pantry Bundle</h3>
+        <p class="muted">Grains • Legumes • Oils</p>
+        <p class="price">$39.00</p>
+      </div>
+    </article>
+    <article class="prod">
+      <img src="https://visitnewportbeach.com/wp-content/uploads/2018/04/whole700-700x400.jpg" alt="Fresh fruit display">
+      <div class="meta">
+        <h3>Fruit Lover’s Pack</h3>
+        <p class="muted">Assorted organic fruits</p>
+        <p class="price">$19.90</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section reveal" aria-labelledby="services-h">
+  <h2 id="services-h">Services</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>Curbside Pickup</h3>
+      <p>Order online, we’ll pack your bags and bring them to your car.</p>
+    </div>
+    <div class="feature">
+      <h3>Local Delivery</h3>
+      <p>Same‑day delivery for nearby ZIP codes when you order by 2pm.</p>
+    </div>
+    <div class="feature">
+      <h3>Bulk Orders</h3>
+      <p>Save on cases of staples for families and small offices.</p>
+    </div>
+    <div class="feature">
+      <h3>Wellness Guidance</h3>
+      <p>Product suggestions for common dietary preferences and needs.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section reveal" aria-labelledby="gallery-h">
+  <h2 id="gallery-h">Gallery</h2>
+  <div class="gallery">
+    <img src="https://visitnewportbeach.com/wp-content/uploads/2018/04/whole700-700x400.jpg" alt="Produce aisle">
+    <img src="https://acol.co.il/media/images_blog/big/a785dfe03bdc4f2013db65a706119ef5.jpg" alt="Organic shelf">
+    <img src="https://avatars.mds.yandex.net/i?id=033bb638f73a00f796741a42e238ecc9350f9a17-5420719-images-thumbs&n=13" alt="Market badge">
+  </div>
+</section>
+
+<!-- MAP -->
+<section class="map reveal" id="map" aria-label="Map">
+  <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=JACARANDA+DR+NEWARK+94560+CA+United+States&output=embed"
+          title="Map to ORGANIC MARKET EUROPE LLC"></iframe>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section reveal" aria-labelledby="contact-h">
+  <h2 id="contact-h">Contact & Hours</h2>
+  <div class="grid">
+    <div>
+      <p>📧 <strong>Email:</strong> <a href="mailto:support@haventy.shop">support@haventy.shop</a></p>
+      <p>📞 <strong>Phone:</strong> <a href="tel:+15077575339">+1 (507) 757‑5339</a></p>
+      <p>📍 <strong>Address:</strong> JACARANDA DR, Newark, CA 94560</p>
+    </div>
+    <div>
+      <p><em>Hours</em></p>
+      <ul>
+        <li>Mon–Sat: 9:00 – 19:00</li>
+        <li>Sun: 10:00 – 16:00</li>
+      </ul>
+      <p class="muted"><small>Hours may vary on holidays.</small></p>
+    </div>
+  </div>
+  <div class="cta">
+    <a class="btn accent" href="tel:+15077575339">Call Now</a>
+    <a class="btn" href="mailto:support@haventy.shop?subject=Order%20Inquiry">Email Us</a>
+  </div>
+</section>
+
+<!-- MOBILE BAR -->
+<div class="bar" role="navigation" aria-label="Quick actions">
+  <a href="tel:+15077575339">Call</a>
+  <a href="mailto:support@haventy.shop">Email</a>
+  <a href="#products">Products</a>
+</div>
+
+<footer role="contentinfo">
+  <p>&copy; 2025 ORGANIC MARKET EUROPE LLC — Fresh. Organic. Local.</p>
+</footer>
+
+<script>
+// Reveal on scroll
+(function(){
+  const addRevealTo = [
+    '.hero', '.hero .panel', '.section', '.feature', '.prod', '.gallery img', '.map iframe', '.btn'
+  ];
+  const all = document.querySelectorAll(addRevealTo.join(','));
+  all.forEach(el=>el.classList.add('reveal'));
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target);} });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+})();
+</script>
 </body>
 </html>
